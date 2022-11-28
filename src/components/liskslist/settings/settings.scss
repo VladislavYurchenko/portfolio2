@@ -1,0 +1,105 @@
+@import "./../../../scss/index.scss";
+
+$previewSize: 50px;
+
+
+.settings-window {
+    &__images-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        // gap: 5px;
+        height: 220px;
+
+        * {
+            max-height: 220px;
+        }
+
+        .view {
+
+            height: 100%;
+            @include border-radius;
+            @include shadow;
+
+            .splide,
+            .splide__track {
+                height: 100%;
+                @include border-radius;
+            }
+
+            img {
+                @include border-radius;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
+
+        .previews {
+            padding: 5px;
+            padding-top: 0;
+            margin-right: -5px;
+
+            .add-image-btn {
+                width: 100%;
+                height: $previewSize;
+                margin-bottom: 5px;
+            }
+
+
+            .previews__list {
+                padding: 0 5px 0 5px;
+                margin: 0 -3px 0 -5px;
+                max-height: 220px - $previewSize - 5px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                @include scrollbars(4px, rgb(119, 119, 119), #252525);
+
+                .preview {
+                    @include border-radius;
+                    display: grid;
+                    grid-template-columns: 5fr 1fr 1fr;
+                    height: $previewSize;
+                    width: 100%;
+                    margin-bottom: 5px;
+
+                    &__active {
+                        box-shadow: 0 0 5px rgba(255, 255, 255, 0.466);
+                    }
+
+                    img {
+                        // flex-grow: 1;
+                        height: $previewSize;
+                        width: 100%;
+                        object-fit: cover;
+                        // object-position: 50% 30%;
+                        background: cornflowerblue;
+                        border-radius: 0.5rem 0 0 0.5rem;
+                    }
+
+                    &__zoom {
+                        button {
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 0;
+                        }
+                    }
+
+                    &__delete {
+                        border-radius: 0 0.5rem 0.5rem 0;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__btns-block {
+        margin-top: 5px;
+        display: flex;
+
+        button {
+            margin-right: 5px;
+        }
+    }
+}

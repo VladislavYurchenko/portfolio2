@@ -1,0 +1,223 @@
+@mixin shadow {
+    box-shadow: rgba(0, 0, 0, 0.38) 0px 0px 6px 0px;
+}
+
+@mixin shadow-light {
+    box-shadow: rgba(0, 0, 0, 0.38) 0px 0px 2px 0px;
+}
+
+@mixin border-radius {
+    border-radius: .5rem;
+}
+
+@mixin border-radius-inputs {
+    border-radius: .35rem;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
+    // For Google Chrome
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+        @include border-radius;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+        @include border-radius;
+    }
+
+    // For Internet Explorer
+    & {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+$ErrorColor: #de2640;
+$WarningColor: #f5bb1b;
+$SuccessColor: #26de4e;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+}
+
+h1,
+h2 {
+    padding: 0;
+    // margin: .4rem 0;
+    font-weight: 300;
+    margin: .2rem 0 .4rem 0;
+
+}
+
+h2 {
+
+    font-size: 40px;
+}
+
+p {
+    padding: 0;
+    margin: .4rem 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    border: none;
+    @include border-radius-inputs;
+    padding: 5px 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+
+}
+
+.btn,
+button {
+    border: none;
+    @include border-radius-inputs;
+    padding: 5px 10px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-mini {
+    padding: 2px 8px;
+}
+
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+
+.sub-btn {
+    cursor: pointer;
+    background: none;
+    padding: 2px 4px;
+
+    &:hover {
+        background: none;
+        text-decoration: underline;
+    }
+}
+
+.container {
+    margin: auto;
+    margin-top: 50px; //todo убрать 
+
+    @media (max-width: 576px) {
+        max-width: 90%;
+    }
+
+    @media (min-width: 576px) {
+        max-width: 500px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 700px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 900px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1100px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1300px;
+    }
+}
+
+.block {
+    padding: 10px 10px;
+    @include border-radius;
+
+}
+
+.fullScreen {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.center-v {
+    display: flex;
+    align-items: center;
+}
+
+.center-h {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-col-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-ai-baseline {
+    align-items: baseline;
+}
+
+.grid-col-gap-0 {
+    grid-column-gap: 0;
+}
+
+.space {
+    margin: 0 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.color-danger {
+    color: #de2640;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    label {
+        margin-bottom: 4px;
+    }
+}

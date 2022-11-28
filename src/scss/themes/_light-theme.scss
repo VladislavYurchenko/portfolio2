@@ -1,0 +1,37 @@
+$mainBackgroundColor_light: rgb(241, 241, 241);
+$mainColor_light:#3751e4; //#213bcf;
+$mainTextColor_light: #000;
+$secondTextColor_light: #fff;
+
+body.LIGHT {
+    background-color: $mainBackgroundColor_light;
+    color: $mainTextColor_light;
+
+    .btn,
+    button {
+        background: $mainColor_light;
+        color: $secondTextColor_light;
+
+        &:hover {
+            background: lighten($mainColor_light, 2%);
+        }
+
+        &:active {
+            background: darken($mainColor_light, 5%);
+        }
+    }
+
+    .sub-btn {
+        color: $mainTextColor_light;
+    }
+
+    input {
+        // border: $mainTextColor_light solid 1px;
+        background: lighten($mainTextColor_light, 95%);
+    }
+
+    .block {
+        background: lighten($mainBackgroundColor_light, 5%);
+        box-shadow: rgba(0, 0, 0, 0.38) 0px 0px 6px 0px;
+    }
+}

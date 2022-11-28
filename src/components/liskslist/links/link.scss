@@ -1,0 +1,120 @@
+@import "./../../../scss/index.scss";
+
+.link-list-grid {
+    .link {
+        @include border-radius;
+        position: relative;
+        height: 230px;
+        width: 100%;
+
+        @media (max-width: 576px) {
+            &__settings-btn {
+                font-size: 30px;
+            }
+        }
+
+        &__img {
+            display: block;
+            box-sizing: border-box;
+            height: 200px;
+            width: 100%;
+            @include border-radius;
+            cursor: pointer;
+
+
+            img,
+            .splide {
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.418);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include border-radius;
+
+                .splide__track {
+                    @include border-radius;
+                    height: 100%;
+                }
+            }
+        }
+
+        &__name {
+            display: inline-block;
+            margin: 5px 5px 0 0px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include border-radius;
+        }
+
+        &__settings-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+
+            &::before {
+                transition: .5s;
+                transform: rotate(0deg);
+                opacity: 0.4;
+            }
+
+            &:hover:before {
+                opacity: 1;
+                transform: rotate(90deg);
+            }
+        }
+
+    }
+
+    .preload-link {
+        .link__img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 30px;
+        }
+
+        .link__name {
+            min-height: 24px;
+            min-width: 150px;
+            color: transparent;
+            width: auto;
+        }
+    }
+}
+
+body.DARK {
+    .link-list-grid {
+        .preload-link {
+            .link__img {
+
+                background: $mainColor_dark;
+
+            }
+
+            .link__name {
+
+                background: $mainColor_dark;
+            }
+        }
+    }
+}
+
+body.LIGHT {
+    .link-list-grid {
+        .preload-link {
+            .link__img {
+                color: lighten($mainTextColor_light, 50%);
+                background: darken($secondTextColor_light, 15%);
+            }
+
+            .link__name {
+                background: darken($secondTextColor_light, 15%);
+            }
+        }
+    }
+}

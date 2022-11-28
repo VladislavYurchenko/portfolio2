@@ -1,0 +1,49 @@
+$mainBackgroundColor_mint: #489176;
+$mainColor_mint: #33725b;
+$mainTextColor_mint: #ececece1;
+
+body.MINT {
+    background-color: $mainBackgroundColor_mint;
+    color: $mainTextColor_mint;
+
+    a {
+        color: $mainTextColor_mint;
+    }
+
+    .btn,
+    button {
+        background: $mainColor_mint;
+        color: $mainTextColor_mint;
+
+        &:hover {
+            background: lighten($mainColor_mint, 2%);
+        }
+
+        &:active {
+            background: darken($mainColor_mint, 5%);
+        }
+    }
+
+    .sub-btn {
+        color: $mainTextColor_mint;
+    }
+
+    input {
+        color: $mainTextColor_mint;
+        // border: darken($mainTextColor_mint, 15%) solid 1px;
+        background: $mainColor_mint;
+
+        &::placeholder {
+            color: darken($mainTextColor_mint, 15%);
+        }
+
+        &:focus {
+            outline: 1px solid black;
+            @include border-radius-inputs;
+        }
+    }
+
+    .block {
+        background: lighten($mainBackgroundColor_mint, 5%);
+    }
+}

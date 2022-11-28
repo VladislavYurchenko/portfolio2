@@ -1,0 +1,104 @@
+@import '../../scss/index.scss';
+
+._notifications-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    z-index: 10;
+
+    ._message {
+        padding-bottom: 8px;
+        margin-bottom: 5px;
+        width: fit-content;
+        @include border-radius;
+        background: rgba(255, 255, 255, 0.192);
+        overflow: hidden;
+        transition: $NoticeShowTime;
+        animation-timing-function: ease-in;
+        transform: translateX(calc(-100% - 6px));
+        font-size: 18px;
+        color: white;
+
+        &__close {
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+
+        }
+
+        &__content {
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+
+
+        &.active {
+            transform: translateX(0);
+        }
+
+
+        &__progressbar {
+            @include border-radius;
+            transition: $NoticeTimeOut;
+            transform: translateX(0);
+            height: 2px;
+            background: rgba(255, 255, 255, 0.589);
+            animation-timing-function: linear;
+
+            &.active {
+                transform: translateX(-100%);
+            }
+
+
+        }
+
+
+
+
+
+    }
+}
+
+body.DARK {
+    ._notifications-box {
+        ._message {
+            &.msg-type- {
+                &ERROR {
+                    background: transparentize($ErrorColor, 0.3);
+                }
+
+                &WARNING {
+                    background: transparentize($WarningColor, 0.3);
+                }
+
+                &SUCCESS {
+                    background: transparentize($SuccessColor, 0.3);
+                }
+            }
+        }
+    }
+}
+
+body.LIGHT {
+    ._notifications-box {
+        ._message {
+            &.msg-type- {
+                &ERROR {
+                    background: transparentize($ErrorColor, 0.1);
+                }
+
+                &WARNING {
+                    background: transparentize($WarningColor, 0.1);
+                }
+
+                &SUCCESS {
+                    background: transparentize($SuccessColor, 0.1);
+                }
+            }
+        }
+    }
+}

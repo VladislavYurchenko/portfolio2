@@ -1,0 +1,49 @@
+$mainBackgroundColor_dark: rgb(29, 29, 32);
+$mainColor_dark: #383838;
+$mainTextColor_dark: rgb(160, 160, 160);
+
+body.DARK {
+    background-color: $mainBackgroundColor_dark;
+    color: $mainTextColor_dark;
+
+    a {
+        color: $mainTextColor_dark;
+    }
+
+    .btn,
+    button {
+        background: $mainColor_dark;
+        color: $mainTextColor_dark;
+
+        &:hover {
+            background: lighten($mainColor_dark, 2%);
+        }
+
+        &:active {
+            background: darken($mainColor_dark, 5%);
+        }
+    }
+
+    .sub-btn {
+        color: $mainTextColor_dark;
+    }
+
+    input {
+        color: $mainTextColor_dark;
+        // border: darken($mainTextColor_dark, 15%) solid 1px;
+        background: $mainColor_dark;
+
+        &::placeholder {
+            color: darken($mainTextColor_dark, 15%);
+        }
+
+        &:focus {
+            outline: 1px solid black;
+            @include border-radius-inputs;
+        }
+    }
+
+    .block {
+        background: lighten($mainBackgroundColor_dark, 5%);
+    }
+}

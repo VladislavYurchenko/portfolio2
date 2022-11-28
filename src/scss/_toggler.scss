@@ -1,0 +1,19 @@
+.react-toggle-track-x,
+.react-toggle-track-check {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.react-toggle--checked .react-toggle-track {
+    background-color: $mainBackgroundColor_light;
+
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: darken($mainBackgroundColor_light, 5%);
+}
+
+.react-toggle-track {
+    @include shadow-light;
+}

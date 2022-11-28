@@ -1,0 +1,33 @@
+.auth {
+    max-width: 400px;
+    margin: 200px auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+
+        &.warning {
+            box-shadow: 0px 0px 4px 0px #de2640;
+        }
+    }
+
+    .btn-block {
+        margin-top: 10px;
+    }
+
+    .grid-col-2 {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .message {
+        margin: 5px 0;
+    }
+}
+
+.free {
+    max-width: 400px;
+    margin: 10px auto 0 auto;
+}

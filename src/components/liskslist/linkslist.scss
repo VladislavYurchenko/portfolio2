@@ -1,0 +1,29 @@
+.link-list-grid {
+    margin: 20px 0;
+    display: grid;
+    gap: 10px;
+
+    @media (max-width: 576px) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 576px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1400px) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
